@@ -82,12 +82,27 @@ Task
 - What behaviors did you test?
 - Why were these tests important?
 
+- Tested to see if tasks are initialized correctly
+- pet - adding tasks, health notes, summary show done correctly
+- owner - adding pets, showing all tasks across multiple pets
+- Schedule - sorting, pending list, filtering tasks by category
+
+-Edge cases: sorting, recurring tasks, duplicate detection, conflict detection, cache invalidation, empty cases
+
+- Recurring task logic is tricky, can easily break the whole scheduling loop
+- conflict detection is subtle
+- need to prevent duplicate tasks (like morning walks at 8 am, 9 am)
 
 
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+
+- I am very confident that scheduler is working greatly. Confidence level 4
+- Other edge case I would test will involve due_time. When due time is entered incorrectly, or when there is no due time. 
+
 
 ---
 
@@ -103,7 +118,7 @@ Task
 
 - If you had another iteration, what would you improve or redesign?
 
-- I want to add choosing dates on the calendar feature.
+- Adding Due dates, and categorizing common tasks. Show completed tasks history.
 
 **c. Key takeaway**
 
