@@ -130,7 +130,19 @@ class Scheduler:
         return False
 
     def daily_summary(self) -> str:
-        """Return a formatted daily summary of pending tasks grouped by pet."""
+        """
+        Print a summary of all pending tasks grouped by pet.
+
+        Example output:
+        === Daily Summary for John Doe ===
+
+        Bella (Dog) — 2 pending task(s):
+          [08:00] Morning Walk (exercise, daily)
+          [18:00] Evening Walk (exercise, daily)
+
+        Max (Cat) — 1 pending task(s):
+          [12:00] Vet Appointment (health, once)
+        """
         lines = [f"=== Daily Summary for {self.owner.name} ==="]
         for pet in self.owner.pets:
             pending = [t for t in pet.tasks if not t.is_completed]
