@@ -50,7 +50,8 @@ No exceptions are raised; an empty list means no conflicts.
 **Recurring task scheduling** — when a `daily` or `weekly` task is completed via `complete_task()`, the next occurrence is automatically created using `Task.next_occurrence()`, which advances `due_date` by `timedelta(days=1)` or `timedelta(weeks=1)`. Tasks marked `once` are completed permanently with no follow-up created.
 
 ## 📸 DEMO ##
-<a href="/course_images/ai110/your_screenshot_name.png" target="_blank"><img src='/Users/jyk/Desktop/AI. Engineering Projects/ai110-module2show-pawpal-starter/Screenshot 2026-03-25 at 10.35.26 PM.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>.
+
+![PawPal App](demo.png)
 
 
 ## Testing PawPal+
