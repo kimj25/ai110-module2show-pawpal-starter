@@ -218,6 +218,7 @@ class Scheduler:
         pet = self.pet_lookup.get(pet_name.lower())
         if pet:
             pet.add_task(task)
+            self.owner._invalidate_cache()
             return True
         return False
 

@@ -38,6 +38,16 @@ No exceptions are raised; an empty list means no conflicts.
 
 **Recurring task scheduling** — when a `daily` or `weekly` task is completed via `complete_task()`, the next occurrence is automatically created using `Task.next_occurrence()`, which advances `due_date` by `timedelta(days=1)` or `timedelta(weeks=1)`. Tasks marked `once` are completed permanently with no follow-up created.
 
+## Testing PawPal+
+
+```bash
+python -m pytest tests/test_pawpal.py -v
+```
+42 passed in 0.01s
+Tests cover creating and completing tasks, sorting by time, filtering by pet and status, and recurring task scheduling (daily/weekly/once). Conflict detection is verified for same-pet overlaps and cross-pet double-booking. Edge cases include empty task lists, unknown pet names, and cache consistency after adding or completing tasks.
+
+Confidence Level 4
+
 ## Getting started
 
 ### Setup
