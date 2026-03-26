@@ -22,6 +22,22 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
+## Smart Scheduling
+
+The `Scheduler` class includes several algorithmic features beyond basic task tracking:
+
+**Sorting** — `sort_by_time(tasks)` returns any list of `Task` objects ordered by `due_time` ascending. Used internally by `daily_summary()` and available for custom views.
+
+**Filtering** — `filter_tasks(completed, pet_name)` lets you query tasks by completion status, pet, or both. Pass `completed=False` for pending only, `completed=True` for history, or omit either argument to skip that filter.
+
+**Conflict detection** — `get_conflicts()` scans all pending tasks and returns a list of warning strings. Two levels are reported:
+- `CONFLICT` — same pet has two or more tasks at the same time
+- `WARNING` — different pets have tasks at the same time (owner is double-booked)
+
+No exceptions are raised; an empty list means no conflicts.
+
+**Recurring task scheduling** — when a `daily` or `weekly` task is completed via `complete_task()`, the next occurrence is automatically created using `Task.next_occurrence()`, which advances `due_date` by `timedelta(days=1)` or `timedelta(weeks=1)`. Tasks marked `once` are completed permanently with no follow-up created.
+
 ## Getting started
 
 ### Setup

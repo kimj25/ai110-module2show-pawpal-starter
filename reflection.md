@@ -41,11 +41,18 @@ Task
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
+- Frequency, Time, Completion are the constraints currently considered
+- Time is the constraint that matters most. Since every method is organized around due_time and due_date. Tasks are organized based on the time.
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+- Scheduler maintains two separate ways to access same data, a task: a List (pet.tasks) and a Dictionary/Map (pet.task_index)
+- every add_task and every complete_task both must be in sync. 
+- It is reasonable since each way can be accessed differently since each preserves different sort description (insertion order vs lookup by description)
+
 
 ---
 
