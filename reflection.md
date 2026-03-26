@@ -7,13 +7,31 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+The design follows a hierarchical composition model, separating pet identity from daily logistics to keep the system modular and testable.
 
+Has four classes: Owner, Pet, Schedule, Task.
+Owner 
+- Global Management, Root container for all data.
+- Holds Pets list, can aggregate all tasks
+Pets  
+- identifies pet, and stores pets data
+- Holds pet's condition, links Schedule
+Schedule 
+- organizes task by date
+- contain tasks, and holds pending task 
+Task
+- lists activities that can be completed
+- tracks due_time, category, and is_completed status
 
 
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+- Was missing relationship: pet and schedule. Diagram had pet "1" --> "1" Schedule, meaning every Pet must have a Schedule. 
+
+- Logic Bottlenecks: Owner.get_all_tasks() has no path to tasks. The method needed to traverse Owner → pets → schedule → tasks. But if any pet's schedule is None, this will throw an AttributeError.  Changed to check if the pet has a schedule, guarding against None.
 
 ---
 
