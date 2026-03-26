@@ -63,10 +63,15 @@ Task
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
+- I used Claude code for design brainstorming, debugging, refractoring, making tests, fixing bugs, and for UI implementation
+- Asking for suggestions to improve the app was helpful. I also liked asking to cover edge cases for tests. 
+
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
+
+- I tried to see if we can make the algorithm "simpler" for the scheduler section. However, the readability was poor so I kept as is. 
 
 ---
 
@@ -76,6 +81,8 @@ Task
 
 - What behaviors did you test?
 - Why were these tests important?
+
+
 
 **b. Confidence**
 
@@ -90,10 +97,16 @@ Task
 
 - What part of this project are you most satisfied with?
 
+- I was surprised and satisfied with the UI portion. Looks clean, and easy to use. Also I liked how it shows entire schedule.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+- I want to add choosing dates on the calendar feature.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+- That it is important to design and build step by step for better organization and minimize redundancy. This way, AI also understands clearly what I am trying to build. 
